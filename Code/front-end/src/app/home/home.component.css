@@ -1,0 +1,24 @@
+.bgImg {
+  height: 100%;
+  background-image: url('../../assets/images/background.jpg');
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  height: 100%;
+}
+
+.playBtn{
+  height: 10em;
+  width: 20em;
+  margin-top: 12em;
+  margin-bottom: 15.3em;
+  opacity: 0.95;
+}
+
+.playTxt {
+  position: relative;
+  font-size: 5em;
+  font-weight: bold;
+}

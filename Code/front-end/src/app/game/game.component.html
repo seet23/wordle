@@ -1,0 +1,11 @@
+<div class="whiteBg">
+  <div class="container">
+      <div *ngFor="let input of indexArray">
+          <div class="d-flex flex-column mb-2">
+              <div>
+                  <app-input-word [chosenWord]="chosenWord" [index]="input"></app-input-word>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

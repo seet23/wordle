@@ -1,0 +1,33 @@
+<form [formGroup]="form">
+    <input type="text" class="input" [maxLength]="maxLength" formControlName="firstWord"
+    [ngClass]="{'notExists': !notExisits[0], 'exist':exists[0], 'sequence': sequenceMatch[0], 'shaker':invalidWord}" pattern="[A-Za-z]"
+     #input1 (keyup)="(input1.value.length == maxLength) ? input2.focus() : ''"
+     onkeyup="this.value = this.value.toUpperCase();">
+
+    <input type="text" class="input" #input2 [maxLength]="maxLength" formControlName="secondWord"
+    [ngClass]="{'notExists': !notExisits[1], 'exist':exists[1], 'sequence': sequenceMatch[1]}" pattern="[A-Za-z]"
+    (keyup)="(input2.value.length == maxLength) ? input3.focus() : ''"
+    (keydown.backspace)="(input2.value.length == maxLength) ? '': input1.focus()"
+    onkeyup="this.value = this.value.toUpperCase();">
+
+    <input type="text" #input3 class="input" [maxLength]="maxLength" formControlName="thirdWord"
+    [ngClass]="{'notExists': !notExisits[2], 'exist':exists[2], 'sequence': sequenceMatch[2]}" pattern="[A-Za-z]"
+    (keyup)="(input3.value.length == maxLength) ? input4.focus() : ''"
+    (keydown.backspace)="(input3.value.length == maxLength) ? '': input2.focus()"
+    onkeyup="this.value = this.value.toUpperCase();">
+
+    <input type="text" #input4 class="input" [maxLength]="maxLength" formControlName="fourthWord"
+    [ngClass]="{'notExists': !notExisits[3], 'exist':exists[3], 'sequence': sequenceMatch[3]}" pattern="[A-Za-z]"
+    (keyup)="(input4.value.length == maxLength) ? input5.focus() : ''"
+    (keydown.backspace)="(input4.value.length == maxLength) ? '': input3.focus()"
+    onkeyup="this.value = this.value.toUpperCase();">
+
+    <input type="text" #input5 class="input" [maxLength]="maxLength" formControlName="fifthWord"
+    [ngClass]="{'notExists': !notExisits[4], 'exist':exists[4], 'sequence': sequenceMatch[4]}" pattern="[A-Za-z]"
+    (keydown.backspace)="(input5.value.length == maxLength) ? '': input4.focus()"
+    (keydown.enter)="(input5.value.length == maxLength) ? submit():''"
+    onkeyup="this.value = this.value.toUpperCase();">
+
+</form>
+
+<!-- <button (click)="submit()"></button> -->
